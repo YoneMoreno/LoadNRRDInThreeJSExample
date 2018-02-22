@@ -157,14 +157,8 @@
 
         controls.update();
 
-        //copy position of the camera into inset
-        camera2.position.copy(camera.position);
-        camera2.position.sub(controls.target);
-        camera2.position.setLength(300);
-        camera2.lookAt(scene2.position);
 
         renderer.render(scene, camera);
-        renderer2.render(scene2, camera2);
 
         stats.update();
 
