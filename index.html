@@ -56,6 +56,7 @@
 </div>
 <div id="inset"></div>
 
+
 <script src="./build/three.js"></script>
 
 <script src="./controls/TrackballControls.js"></script>
@@ -112,6 +113,9 @@
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
 
+        renderer.info.autoReset = false;
+        console.log(renderer.info);
+
         container = document.createElement('div');
         document.body.appendChild(container);
         container.appendChild(renderer.domElement);
@@ -125,8 +129,6 @@
         controls.staticMoving = true;
         controls.dynamicDampingFactor = 0.3;
 
-        stats = new Stats();
-        container.appendChild(stats.dom);
 
         window.addEventListener('resize', onWindowResize, false);
 
@@ -151,8 +153,6 @@
 
 
         renderer.render(scene, camera);
-
-        stats.update();
 
     }
 
